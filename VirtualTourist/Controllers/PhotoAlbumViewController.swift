@@ -54,7 +54,9 @@ class PhotoAlbumViewController: UIViewController {
         newCollectionButton.isHidden = false
         addAnnotationToMap()
         collectionViewLayout()
-        fetchRequestForPhotos()
+
+        photosFetchRequest()
+        
         
     }
     
@@ -72,26 +74,30 @@ class PhotoAlbumViewController: UIViewController {
     
     // MARK: - Functions
     
-    func fetchRequestForPhotos(){
+    func  photosFetchRequest(){
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        let predicate = NSPredicate(format: "pin == %@", pin)
         
-        fetchRequest.predicate = predicate
-        
+
+        let newPredicate = NSPredicate(format: "pin == %@", pin)
+
+
+        fetchRequest.predicate = newPredicate
+
         if let result = try? dataController.viewContext.fetch(fetchRequest){
-            
             coreDataPhotos = result
-            
+
             performUIUpdatesOnMain {
                 if self.coreDataPhotos.count == 0 {
-                    self.requestFlickrPhotosFromPin()
+                    self.flickerPhotosFetchRequestFromPin()
                 }
                 self.collectionView.reloadData()
             }
         }
     }
     
-    func requestFlickrPhotosFromPin() {
+    
+    
+    func flickerPhotosFetchRequestFromPin() {
         ClientForFlickr.sharedInstance().getPhotosPath(lat: selectedCoordinate.latitude, lon: selectedCoordinate.longitude) { photos, error in
             
             if let photos = photos {
@@ -151,7 +157,7 @@ class PhotoAlbumViewController: UIViewController {
         if selectedToDelete.count > 0 {
             print("there is more that one selected item to delete")
         } else {
-            requestFlickrPhotosFromPin()
+            flickerPhotosFetchRequestFromPin()
         }
     }
     

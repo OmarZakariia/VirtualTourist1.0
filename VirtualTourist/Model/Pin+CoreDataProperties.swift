@@ -9,34 +9,36 @@ import Foundation
 import CoreData
 // Pin class extension that contains its properties, methods \
 
-extension Pin{
-    // check for persistent instances of the object 'Pin'
+
+extension Pin {
     
-    @nonobjc public class  func fetchRequest() -> NSFetchRequest<Pin> {
+        
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Pin> {
         return NSFetchRequest<Pin>(entityName: "Pin")
     }
+
     
     // attributes
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
     
     // relationship
-    @NSManaged public var photos: NSSet?
-    
-    
+    @NSManaged public var photos: NSSet? 
+
 }
 
-extension Pin{
-    @objc (addPhotosObject:)
+extension Pin {
+
+    @objc(addPhotosObject:)
     @NSManaged public func addToPhotos(_ value: Photo)
-    
-    @objc (removePhotosObject:)
+
+    @objc(removePhotosObject:)
     @NSManaged public func removeFromPhotos(_ value: Photo)
-    
-    @objc (addPhotos:)
+
+    @objc(addPhotos:)
     @NSManaged public func addToPhotos(_ values: NSSet)
-    
-    @objc (removePhoto:)
+
+    @objc(removePhotos:)
     @NSManaged public func removeFromPhotos(_ values: NSSet)
-    
+
 }

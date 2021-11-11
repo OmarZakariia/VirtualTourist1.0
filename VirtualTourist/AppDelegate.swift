@@ -8,7 +8,8 @@
 import UIKit
 
 
-@main
+@UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
@@ -24,10 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         dataController.load()
 
-        let navigationController = window?.rootViewController as! UINavigationController
-        let travelLocationsVC = navigationController.topViewController as! TravelLocationsMapVC
-        travelLocationsVC.dataController = dataController
+//        let navigationController = window?.rootViewController as! UINavigationController
+//        let travelLocationsVC = navigationController.topViewController as! TravelLocationsMapVC
+//        travelLocationsVC.dataController = dataController
 
+
+        
    
         
         return true

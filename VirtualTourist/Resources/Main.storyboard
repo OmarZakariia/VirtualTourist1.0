@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UwQ-Ur-XMC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Slx-1H-jzB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="yRL-lh-cLv">
+            <objects>
+                <navigationController id="Slx-1H-jzB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cYi-pj-Aaq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PtV-25-6cO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pjh-xt-W7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="133"/>
+        </scene>
         <!--Virtual Tourist-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -172,6 +188,7 @@
                             <constraint firstItem="gXK-Sd-tJW" firstAttribute="leading" secondItem="z1F-QQ-tIU" secondAttribute="leading" id="ykZ-2n-knw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="qO0-Z8-Qb3"/>
                     <connections>
                         <outlet property="collectionView" destination="gXK-Sd-tJW" id="OXj-tx-cia"/>
                         <outlet property="mapFragment" destination="pgz-qV-rvm" id="FEr-VK-dGJ"/>
@@ -181,24 +198,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDG-F5-g1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1285.5072463768117" y="132.88043478260872"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="K3c-Bu-wmc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="UwQ-Ur-XMC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DJc-Es-NHZ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WXx-hL-2JI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vmk-wf-8YE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-314" y="134"/>
         </scene>
     </scenes>
 </document>

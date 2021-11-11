@@ -43,7 +43,7 @@ class TravelLocationsMapVC: UIViewController {
         super.viewDidLoad()
 
         editDoneButton()
-        fetchRequestForPins()
+//        fetchRequestForPinss()
     }
     
     
@@ -51,21 +51,9 @@ class TravelLocationsMapVC: UIViewController {
     
     
     // MARK: - Functions
-    func fetchRequestForPins(){
+    func fetchRequestForPinss(){
         
-//        let fetchRequest : NSFetchRequest<Pin> = Pin.fetchRequest()
-//
-//        if let result = try? dataController.viewContext.fetch(fetchRequest){
-//            pins = result
-//        }
-//
-//        for pin in pins {
-//            let coordinate = CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude)
-//
-//            let pins = PinOnMap(coordinate: coordinate)
-//            pinsOnMap.append(pins)
-//        }
-//        mapView.addAnnotations(pinsOnMap)
+
         
         let fetchRequest : NSFetchRequest<Pin> = Pin.fetchRequest()
         

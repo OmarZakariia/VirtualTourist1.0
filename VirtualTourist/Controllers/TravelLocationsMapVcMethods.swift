@@ -19,7 +19,7 @@ extension TravelLocationsMapVC: MKMapViewDelegate {
         let longitude = coordinateSelected?.longitude
         
         if !editMode {
-            for pin in pin {
+            for pin in pins {
                 if pin.latitude == latitude && pin.longitude ==  longitude {
                     self.pinToPass = pin
                     self.pinCoordinate = coordinateSelected
@@ -28,7 +28,7 @@ extension TravelLocationsMapVC: MKMapViewDelegate {
             performSegue(withIdentifier: "PinPhotos", sender: coordinateSelected)
             mapView.deselectAnnotation(view.annotation, animated: false)
         } else {
-            for pin in pin{
+            for pin in pins {
                 if pin.latitude == latitude && pin.longitude == longitude {
                     let pinToDelete = pin
                     dataController.viewContext.delete(pinToDelete)
